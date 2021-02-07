@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"hash"
 	"log"
 	"time"
 
@@ -11,18 +10,8 @@ import (
 	"github.com/CortexFoundation/CortexTheseus/crypto"
 )
 
-type KeccakState interface {
-	hash.Hash
-	Read([]byte) (int, error)
-}
-
-var (
-	//secp256k1N, _ = new(big.Int).SetString("fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141", 16)
-	testpri = "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032"
-)
-
 const (
-//DigestLength = 32
+	testpri = "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032"
 )
 
 func main() {
