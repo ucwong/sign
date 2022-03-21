@@ -3,7 +3,6 @@ package util
 import (
 	"fmt"
 	"log"
-	"time"
 
 	"github.com/CortexFoundation/CortexTheseus/common"
 	"github.com/CortexFoundation/CortexTheseus/common/hexutil"
@@ -14,8 +13,8 @@ const (
 	testpri = "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032"
 )
 
-func Verify(msg, addr, sig string, timestamp int64) bool {
-	if len(msg) == 0 || len(addr) == 0 || len(sig) == 0 || timestamp == 0 {
+func Verify(msg, addr, sig string) bool {
+	/*if len(msg) == 0 || len(addr) == 0 || len(sig) == 0 || timestamp == 0 {
 		log.Println("params failed msg:" + msg + ", addr:" + addr + ", sig:" + sig)
 		return false
 	}
@@ -26,7 +25,7 @@ func Verify(msg, addr, sig string, timestamp int64) bool {
 
 	if time.Now().Unix()+int64(30) < timestamp {
 		return false
-	}
+	}*/
 
 	//sig_, _ := SignData(msg, testpri)
 	//log.Printf("[signature] : want:%s, have:%s", hexutil.Encode(sig_[:]), sig)

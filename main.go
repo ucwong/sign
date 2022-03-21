@@ -4,7 +4,6 @@ import (
 	"github.com/CortexFoundation/CortexTheseus/common/hexutil"
 	"github.com/ucwong/sign/util"
 	"log"
-	"time"
 )
 
 const (
@@ -17,7 +16,8 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	suc := util.Verify(msg, "0x970E8128AB834E8EAC17Ab8E3812F010678CF791", hexutil.Encode(sig[:]), time.Now().Unix())
+	log.Println(hexutil.Encode(sig[:]))
+	suc := util.Verify(msg, "0x970E8128AB834E8EAC17Ab8E3812F010678CF791", hexutil.Encode(sig[:]))
 	if suc {
 		log.Println("Sign suc")
 	}
