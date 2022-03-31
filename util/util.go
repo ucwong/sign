@@ -26,6 +26,9 @@ func Verify(msg, addr, sig string) bool {
 	if time.Now().Unix()+int64(30) < timestamp {
 		return false
 	}*/
+	if len(msg) == 0 || len(addr) == 0 || len(sig) == 0 {
+		return false
+	}
 
 	//sig_, _ := SignData(msg, testpri)
 	//log.Printf("[signature] : want:%s, have:%s", hexutil.Encode(sig_[:]), sig)
